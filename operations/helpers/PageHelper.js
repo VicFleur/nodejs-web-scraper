@@ -112,9 +112,13 @@ class PageHelper {
                     timeout: this.Operation.scraper.config.timeout,
                     auth: this.Operation.scraper.config.auth,
                     headers: this.Operation.scraper.config.headers,
-                    proxy: this.Operation.scraper.config.proxy
-
+                    proxy: this.Operation.scraper.config.proxy,
+                    responseType: 'buffer'
                 })
+
+                const decoder = new TextDecoder(this.Operation.scraper.config.encoding);
+                resp.data = decoder.decode(resp.data);
+
                 if (this.Operation.scraper.config.removeStyleAndScriptTags) {
                     resp.data = stripTags(resp.data);
                 }

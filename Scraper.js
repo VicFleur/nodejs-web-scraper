@@ -32,6 +32,7 @@ class Scraper {
      * @param {Object} [globalConfig.auth = null] 
      * @param {Object} [globalConfig.headers = {}] 
      * @param {string} [globalConfig.proxy = null] 
+     * @param {string} [globalConfig.encoding = 'utf-8'] 
      * @param {Function} [globalConfig.onError = null]
      */
 
@@ -52,6 +53,7 @@ class Scraper {
             auth: null,
             headers: {},
             proxy: null,
+            encoding: 'utf-8',
             showConsoleLogs: true,
             usePuppeteer: false,//Deprecated
             puppeteerDebugMode: false,//For debugging
